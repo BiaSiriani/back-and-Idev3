@@ -1,3 +1,4 @@
+const Module = require("module");
 const user = require("./user");
 
 class userServer{
@@ -17,4 +18,4 @@ class userServer{
     }
 
 }
-modulo;exports = new userServer;
+Module;exports = new userServer;
