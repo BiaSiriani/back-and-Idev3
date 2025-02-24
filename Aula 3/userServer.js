@@ -1,21 +1,19 @@
-const Module = require("module");
-const user = require("./user");
+const User = require("./user")
 
-class userServer{
-    constructor(){
-        this.users = [];// Array to amarzenar user
-        this.nextid =1;//contador para gerar id
+class userService {
+    constructor() {
+        this.users = []; // array para armazenar
+        this.nextid = 1;
     }
-
-    adduser(nome,email){
-        const user =new user(this.nextid++, nome, email);
-        this.users.push(user)
+    addUser(nome, email) {
+        const user = new User(this.nextid++, nome, email);
+        this.users.push(user);
         return user;
     }
-
-    getuser(){
+    getUser() {
         return this.users
-    }
 
+    }
 }
-Module;exports = new userServer;
+
+module.exports = new userService;
