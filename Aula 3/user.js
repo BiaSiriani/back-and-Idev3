@@ -4,8 +4,6 @@ class User {
         this.nome = nome; // nome do usuario
         this.email = email; //email usuario
     }
-
-
 }
-module.exports = User; //exporta o modulo
 
+module.exports = User; //exporta o modulocomat
