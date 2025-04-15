@@ -15,16 +15,22 @@ CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
 -- -----------------------------------------------------
--- Table `mydb`.`usuarios`
+-- Table `mydb`.`table1`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `mydb`.`usuarios` (
-  `idusuario` INT NULL AUTO_INCREMENT,
-  `usuarioscol` VARCHAR(45) NOT NULL,
-  `email` VARCHAR(45) NOT NULL,
-  `senha` VARCHAR(45) NOT NULL,
-  `telefone` VARCHAR(20) NOT NULL,
-  `CPF` VARCHAR(20) NOT NULL,
-  PRIMARY KEY (`idusuario`))
+CREATE TABLE IF NOT EXISTS `idev3`.`tab`
+ENGINE = InnoDB;
+
+
+-- -----------------------------------------------------
+-- Table `mydb`.`usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `idev3`.`usuario` (
+  `nome` VARCHAR(200) NULL,
+  `email` VARCHAR(200) NULL,
+  `senha` VARCHAR(200) NULL,
+  `cpf` VARCHAR(200) NULL,
+  `telefone` VARCHAR(200) NULL,
+  `endereço` VARCHAR(200) NULL)
 ENGINE = InnoDB;
 
 
