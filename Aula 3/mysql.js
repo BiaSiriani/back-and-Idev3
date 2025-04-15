@@ -1,11 +1,9 @@
-const { query } = require('express');
-const mysql = require('mysql');
-const { resolve } = require('path');
+const mysql = require('mysql2');
 
-const pool = mysql.createPool({
-"User":"root",
+const pool = mysql.createConnection({
+"user":"root",
 "password":"root",
-"database":"idev3",
+"database":"mydb",
 "host":"localhost",
 "port":"3307"
 
@@ -13,13 +11,13 @@ const pool = mysql.createPool({
 
 exports.execute = (query, param = [], varPool=pool) => {
     return new Promise((resolve, reject) => {
-        varPool.query(query, param (error, results))
-        if(error) {
-            reject(error);
-        }
-        else {
-            resolve(results);
-
-        }
+        varPool.query(query, param, (error, results) => {
+            if(error) {
+                reject(error);
+            }
+            else {
+                resolve(results);
+            }
+        })   
     })
 }
